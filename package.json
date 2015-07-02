@@ -1,0 +1,16 @@
+{
+  "name": "text-ranking",
+  "version": "0.1.0",
+  "scripts": {
+    "lint": "jscs lib/ spec/ && jshint lib/ spec/",
+    "test": "mocha -R dot **/*.spec.js"
+  },
+  "author": "Alex Tercete",
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "jscs": "^1.13.1",
+    "jshint": "^2.8.0",
+    "mocha": "^2.2.5",
+    "sinon": "^1.15.4"
+  }
+}
