@@ -16,7 +16,7 @@ describe('Stats', function () {
     statsServer = new StatsServer(inMemoryStorage);
   });
 
-  it.skip('should be provided for processed text', function (done) {
+  it('should be provided for processed text', function (done) {
     textProcessorServer.start(5555);
     statsServer.start(8080);
 
