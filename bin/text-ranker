@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+var argv = require('yargs')
+  .default('tcpPort', 5555)
+  .default('httpPort', 8080)
+  .argv;
+
+var InMemoryStorage = require('../lib/in-memory-storage');
+var TextProcessorServer = require('../lib/text-processor-server');
+var StatsServer = require('../lib/stats-server');
+
+var inMemoryStorage = new InMemoryStorage();
+var textProcessorServer = new TextProcessorServer(inMemoryStorage);
+var statsServer = new StatsServer(inMemoryStorage);
+
+console.log('Starting TCP server on port', argv.tcpPort);
+textProcessorServer.start(argv.tcpPort);
+
+console.log('Starting HTTP server on port', argv.httpPort);
+statsServer.start(argv.httpPort);
+
+console.log('Hit CTRL+C to interrupt');
