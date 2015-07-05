@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "scripts": {
     "lint": "jscs lib/ spec/ && jshint lib/ spec/",
-    "test": "mocha -R dot **/*.spec.js"
+    "test": "mocha -R dot **/*.spec.js",
+    "watch:test": "npm test -- --watch"
   },
   "author": "Alex Tercete",
   "devDependencies": {
@@ -11,6 +12,10 @@
     "jscs": "^1.13.1",
     "jshint": "^2.8.0",
     "mocha": "^2.2.5",
-    "sinon": "^1.15.4"
+    "sinon": "^1.15.4",
+    "sinon-chai": "^2.8.0"
+  },
+  "dependencies": {
+    "lodash": "^3.10.0"
   }
 }
